@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Prediction Result</h1>
+            <p>AI-powered prediction results based on the uploaded Chest X-ray for Tumor Detection.</p>
+        </header>
+
+        <!-- Result Card -->
+        <div class="result-card">
+            <p>The X-ray is predicted to be: <strong>{{ prediction }}</strong></p>
+
+            <!-- Precautions Section -->
+            <div class="precautions">
+                <h2>Precautions</h2>
+                <ul>
+                    {% for precaution in precautions %}
+                        <li>{{ precaution }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Go Back Button -->
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
